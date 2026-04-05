@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:init": "node scripts/init-db.js",
+    "db:create-admin": "node scripts/create-admin.js"
   },
   "dependencies": {
     "@radix-ui/react-slot": "latest",
