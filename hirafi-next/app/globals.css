@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Roboto", sans-serif;
+  --font-display: "Roboto", sans-serif;
+
+  /* Colors */
+  --color-background: hsl(220 20% 97%);
+  --color-foreground: hsl(220 40% 13%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(220 40% 13%);
+  --color-primary: hsl(215 80% 27%);
+  --color-primary-foreground: hsl(40 60% 94%);
+  --color-secondary: hsl(215 25% 90%);
+  --color-secondary-foreground: hsl(215 80% 27%);
+  --color-muted: hsl(220 15% 93%);
+  --color-muted-foreground: hsl(220 10% 46%);
+  --color-accent: hsl(40 75% 50%);
+  --color-accent-foreground: hsl(220 40% 13%);
+  --color-border: hsl(220 15% 88%);
+  --color-input: hsl(220 15% 88%);
+  --color-gold: hsl(40 75% 50%);
+  --color-gold-light: hsl(40 80% 70%);
+  --color-gold-dark: hsl(40 70% 38%);
+  --color-navy: hsl(215 80% 27%);
+  --color-navy-light: hsl(215 60% 40%);
+  --color-navy-dark: hsl(215 85% 18%);
+  --color-destructive: hsl(0 84% 60%);
+
+  --radius: 0.75rem;
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+  }
+
+  /* Automatically use Amiri when language is Arabic */
+  html[lang="ar"] body {
+    font-family: "Amiri", serif;
+  }
+}
+
+@layer utilities {
+  .font-cairo {
+    font-family: "Cairo", sans-serif;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(40 75% 50%), hsl(40 80% 65%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-navy {
+    background: linear-gradient(135deg, hsl(215 85% 18%), hsl(215 80% 27%));
+  }
+
+  .bg-gradient-gold {
+    background: linear-gradient(135deg, hsl(40 75% 50%), hsl(40 70% 38%));
+  }
+
+  .shadow-gold {
+    box-shadow: 0 4px 20px -4px hsl(40 75% 50% / 0.3);
+  }
+
+  .shadow-gold-xl {
+    box-shadow: 0 8px 40px -8px hsl(40 75% 50% / 0.4);
+  }
+
+  .shadow-navy {
+    box-shadow: 0 4px 20px -4px hsl(215 80% 27% / 0.3);
+  }
+
+  /* Card style */
+  .card {
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+  }
+}
